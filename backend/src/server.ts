@@ -1,8 +1,11 @@
 import express from 'express';
+import './database/connection';
+import routes from './routes';
 
 const app = express();
 
-
+app.use(express.json());
+app.use(routes);
 
 //Recurso = usuário
 
@@ -24,12 +27,7 @@ Route params -> http://localhost:3333/users/1  (identificar um recurso PUT/DELET
 Body -> http://localhost:3
 */
 
-
 //isso abaixo é uma rota
-
-app.get('/users', (request, response) => {
-    return response.json({ message: 'Hello World' });
-});
 
 app.listen(3333);
 
