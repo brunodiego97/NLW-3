@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 
 
-//isso abaixo é uma rota
+
 //Recurso = usuário
 
 /*
@@ -22,3 +22,14 @@ Query params -> http://localhost:3333/users?serach=bruno (? =)
 Route params -> http://localhost:3333/users/1  (identificar um recurso PUT/DELETE)
 
 Body -> http://localhost:3
+*/
+
+
+//isso abaixo é uma rota
+
+app.get('/users', (request, response) => {
+    return response.json({ message: 'Hello World' });
+});
+
+app.listen(3333);
+
